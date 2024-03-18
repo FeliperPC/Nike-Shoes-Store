@@ -3,8 +3,8 @@ function ShoeDetail() {
   return (
     <div className="flex flex-col lg:flex-row-reverse space-y-4">
       {/* Image */}
-      <div className="flex-1">
-        <div className='bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4DD4C6]'>
+      <div className="flex-1 lg:-mt-32 lg:ml-28">
+        <div className='flex-center h-full bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4DD4C6]'>
           <img src={nike1}/>
         </div>
       </div>
