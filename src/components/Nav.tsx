@@ -22,14 +22,19 @@ function Nav() {
       </button>
       {/* Menu list */}
       <div className={`${!isMobile && "hidden"} w-full lg:w-auto p lg:block`}>
-        <ul className="lg:space-x-8 flex flex-col lg:flex-row lg:bg-transparent bg-gray-50 lg:border-none text-lg
-         border-gray-100 rounded-lg p-4 cursor-pointer">
+        <ul
+          className="lg:space-x-8 flex flex-col lg:flex-row lg:bg-transparent bg-gray-50 lg:border-none text-lg
+         border-gray-100 rounded-lg p-4 cursor-pointer"
+        >
           {/* li has display block., no need to insert display column */}
           {ROUTES.map((item, i) => (
             <li
               className={`px-3 py-2 rounded lg:hover:bg-transparent lg:hover:text-blue-500
-              ${i === 0 ? "bg-blue-500 lg:bg-transparent lg:text-blue-500 text-white" : 
-              "hover:bg-gray-100 "}
+              ${
+                i === 0
+                  ? "bg-blue-500 lg:bg-transparent lg:text-blue-500 text-white"
+                  : "hover:bg-gray-100 "
+              }
               ${(i == 3 || i == 4) && "lg:text-white"}
               `}
               key={item}
