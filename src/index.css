@@ -14,3 +14,9 @@
     font-family: 'Nunito Sans Variable', sans-serif;
   }
 }
+
+@layer utilities {
+  .btn-press-animation {
+    @apply transition active:scale-75
+  }
+}

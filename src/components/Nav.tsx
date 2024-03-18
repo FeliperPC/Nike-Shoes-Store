@@ -47,7 +47,7 @@ function Nav() {
       {/* Thinking on mobile first this looks great ! */}
       <div className="fixed left-4 bottom-4 lg:static">
         {/* if you put position fixed, to change that to default again put static to other screens*/}
-        <div className="lg:mr-8 flex-center h-12 w-12 rounded-full bg-white shadow-md cursor-pointer">
+        <div className="btn-press-animation lg:mr-8 flex-center h-12 w-12 rounded-full bg-white shadow-md cursor-pointer">
           {/* Cart buttom */}
           <TbShoppingBag />
         </div>
