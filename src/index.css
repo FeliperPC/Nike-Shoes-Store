@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* creating a shortcut for align and justify items on center */
+@layer utilities {
+  .flex-center{
+    @apply flex justify-center items-center
+  }
+}
