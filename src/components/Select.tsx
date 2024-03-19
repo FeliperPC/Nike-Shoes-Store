@@ -21,8 +21,8 @@ function Select({ options, title }: SelectType) {
           </option>
         ))}
       </select>
-      <div className="absolute right-0 inset-y-0 flex-center pr-3">
-        <IoIosArrowDown/>
+      <div className="absolute pointer-events-none right-0 inset-y-0 flex-center pr-3">
+        <IoIosArrowDown />
       </div>
     </div>
   );
