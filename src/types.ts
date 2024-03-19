@@ -1,5 +1,3 @@
-import { PropsWithChildren } from "react";
-
 export type ShoeType = {
   id: number;
   src: string;
@@ -9,12 +7,34 @@ export type ShoeType = {
   price: number;
 };
 
-export type ChildremProps = {
-  children: PropsWithChildren;
-};
-
-export type RootState = {
+export type SideBarState = {
   sideBarReducer: {
     isShown: boolean;
   };
 };
+
+export type PreviewState = {
+  previewReducer: {
+    shoe: ShoeType;
+  };
+};
+
+export type CartState = {
+  cartReducer : {
+    shoeList : ShoeType[]
+  }
+}
+
+export type SelectType = {
+  options: number[];
+  title: string;
+  className?:string
+};
+
+export type CardListType = {
+  shoeList: ShoeType[];
+};
+
+export type ProductProps = {
+  shoe : ShoeType
+}

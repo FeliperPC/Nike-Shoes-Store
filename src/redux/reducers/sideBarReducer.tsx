@@ -1,8 +1,5 @@
-import { combineReducers } from "redux";
-
 type ActionType = {
   type: string;
-  payload?: boolean; // may change according to future actions
 };
 
 const sideBarReducer = (state = { isShown: false }, action: ActionType) => {
@@ -19,4 +16,6 @@ const sideBarReducer = (state = { isShown: false }, action: ActionType) => {
   }
 };
 
-export const rootReducer = combineReducers({ sideBarReducer });
+
+
+export default sideBarReducer

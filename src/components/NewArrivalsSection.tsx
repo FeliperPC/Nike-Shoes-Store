@@ -1,9 +1,5 @@
-import { ShoeType } from "../types";
 import Card from "./Card";
-
-type CardListType = {
-  shoeList: ShoeType[];
-};
+import { CardListType } from "../types";
 
 function NewArrivalsSection({ shoeList }: CardListType) {
   return (

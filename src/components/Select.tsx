@@ -1,10 +1,7 @@
 import { IoIosArrowDown } from "react-icons/io"; 
 import { twMerge } from "tw-merge";
-type SelectType = {
-  options: number[];
-  title: string;
-  className?:string
-};
+import { SelectType } from "../types";
+
 
 function Select({ options, title, className='' }: SelectType) {
   return (

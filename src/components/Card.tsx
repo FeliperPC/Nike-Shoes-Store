@@ -1,13 +1,13 @@
-import { ShoeType } from "../types"
+import { useDispatch } from "react-redux"
+import { ProductProps } from "../types"
+import { PREVIEW } from "../redux/actions"
 
-type CardProps = {
-  shoe : ShoeType
-}
-
-function Card({shoe}:CardProps){
+function Card({shoe}:ProductProps){
+  const dispatch = useDispatch()
   return(
     <div
       className={`${shoe.className} max-w-xl transform cursor-pointer transition hover:scale-105`}
+      onClick={()=>dispatch(PREVIEW(shoe))}
     >
       <div className="p-8">
         <h1 className="text-2xl font-bold">{shoe.title}</h1>

@@ -1,23 +1,18 @@
-import { ShoeType } from "../types";
 import { CiTrash } from "react-icons/ci";
 import Select from "./Select";
 import { QTY, SIZES } from "../data";
+import { ProductProps } from "../types";
 
-
-type ItemProps = {
-  item: ShoeType;
-};
-
-function CartItem({ item }: ItemProps) {
+function CartItem({ shoe }: ProductProps) {
   return (
     <div className="cursor-pointer hover:bg-[#DAFFA2] bg-gray-50">
       <div className="flex p-2 space-x-2">
-        <img className="h-24" src={item.src} />
+        <img className="h-24" src={shoe.src} />
         <div className="flex-wrap space-y-2">
-          <h2 className="font-bold">{item.title}</h2>
-          <p className="text-sm text-gray-400">{item.description}</p>
+          <h2 className="font-bold">{shoe.title}</h2>
+          <p className="text-sm text-gray-400">{shoe.description}</p>
         </div>
-        <h1 className="font-bold">{item.price}$</h1>
+        <h1 className="font-bold">{shoe.price}$</h1>
       </div>
       <div className="flex justify-between pl-32">
         <div className="flex space-x-6">
