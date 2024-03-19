@@ -2,10 +2,13 @@ import { TbShoppingBag } from "react-icons/tb";
 import NikeLogo from "../assets/nike-logo.svg?react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
+import { SIDEBAR_IS_SHOWN } from "../redux/actions";
+import { useDispatch } from "react-redux";
 
 function Nav() {
   const [isMobile, setIsMobile] = useState(false);
   const ROUTES = ["Home", "About", "Services", "Pricing", "Contact"];
+  const dispatch = useDispatch();
   return (
     <nav className="relative z-10 flex flex-wrap items-center justify-between">
       {/* logo, throws nowhere */}
@@ -47,7 +50,10 @@ function Nav() {
       {/* Thinking on mobile first this looks great ! */}
       <div className="fixed left-4 bottom-4 lg:static">
         {/* if you put position fixed, to change that to default again put static to other screens*/}
-        <div className="btn-press-animation lg:mr-8 flex-center h-12 w-12 rounded-full bg-white shadow-md cursor-pointer">
+        <div
+          className="btn-press-animation lg:mr-8 flex-center h-12 w-12 rounded-full bg-white shadow-md cursor-pointer"
+          onClick={() => dispatch(SIDEBAR_IS_SHOWN)}
+        >
           {/* Cart buttom */}
           <TbShoppingBag />
         </div>
