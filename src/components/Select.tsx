@@ -1,15 +1,18 @@
 import { IoIosArrowDown } from "react-icons/io"; 
+import { twMerge } from "tw-merge";
 type SelectType = {
   options: number[];
   title: string;
+  className?:string
 };
 
-function Select({ options, title }: SelectType) {
+function Select({ options, title, className='' }: SelectType) {
   return (
     <div className="relative">
       <select
         defaultValue={title}
-        className="w-24 appearance-none border border-gray-300 bg-white p-4"
+        className={twMerge(`w-24 appearance-none border border-gray-300 bg-white p-4 ${className}`)}
+        // twMerge assures that whatever tailwind that comes in the props will for sure overwrite any priority css before
       >
         <option value={title} disabled hidden>
           {title}
@@ -21,7 +24,7 @@ function Select({ options, title }: SelectType) {
           </option>
         ))}
       </select>
-      <div className="absolute pointer-events-none right-0 inset-y-0 flex-center pr-3">
+      <div className="absolute pointer-events-none right-0 inset-y-0 flex-center pr-3 ">
         <IoIosArrowDown />
       </div>
     </div>
