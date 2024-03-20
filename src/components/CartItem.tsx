@@ -2,10 +2,13 @@ import { CiTrash } from "react-icons/ci";
 import Select from "./Select";
 import { QTY, SIZES } from "../data";
 import { ProductProps } from "../types";
+import { useDispatch } from "react-redux";
+import { RM_FROM_CART } from "../redux/actions";
 
 function CartItem({ shoe }: ProductProps) {
+  const dispatch = useDispatch()
   return (
-    <div className="cursor-pointer hover:bg-[#DAFFA2] bg-gray-50">
+    <div className="cursor-pointer hover:bg-[#DAFFA2] bg-gray-50 py-2">
       <div className="flex p-2 space-x-2">
         <img className="h-24" src={shoe.src} />
         <div className="flex-wrap space-y-2">
@@ -16,17 +19,17 @@ function CartItem({ shoe }: ProductProps) {
       </div>
       <div className="flex justify-between pl-32">
         <div className="flex space-x-6">
-          <label>
+          <label className="font-semibold">
             QTY
             <Select options={QTY} title="" className={'p-1 w-16'}/>
           </label>
-          <label>
-            QTY
+          <label className="font-semibold">
+            SIZE
             <Select options={SIZES} title="" className={'p-1 w-16'} />
           </label>
         </div>
-        <button>
-          <CiTrash className="text-black" size={25} />
+        <button onClick={()=>dispatch(RM_FROM_CART(shoe))}>
+          <CiTrash className="text-black mr-2" size={25} />
         </button>
       </div>
     </div>

@@ -4,13 +4,12 @@ import { SideBarState, CartState } from "../types";
 import CartItem from "./CartItem";
 
 function Cart() {
-  
   const isShown = useSelector(
-    (state: SideBarState) => state.sideBarReducer.isShown)
-  const rootState = useSelector((state:CartState)=>state.cartReducer)
-  console.log(rootState);
-  
-  const dispatch = useDispatch()
+    (state: SideBarState) => state.sideBarReducer.isShown
+  );
+  const rootState = useSelector((state: CartState) => state.cartReducer);
+
+  const dispatch = useDispatch();
   return (
     <div
       className={`p-5 overflow-y-auto fixed right-0 z-50 top-0 bg-white h-full w-full md:w-[50%] xl:w-[35%]
@@ -19,9 +18,11 @@ function Cart() {
     `}
     >
       <h2 className="text-2xl font-bold mb-10">Cart</h2>
-      <div className="space-y-4">
-        {rootState.shoeList.map((item)=><CartItem shoe={item}/>)}
-      </div>
+      <ul className="space-y-5">
+        {rootState.shoeList.map((item) => (
+          <li key={item.id}><CartItem shoe={item}/></li>
+        ))}
+      </ul>
       <button
         className="absolute text-black font-bold p-2 top-4 right-4"
         onClick={() => dispatch(SIDEBAR_IS_SHOWN)}
@@ -33,4 +34,4 @@ function Cart() {
   );
 }
 
-export default Cart
+export default Cart;
