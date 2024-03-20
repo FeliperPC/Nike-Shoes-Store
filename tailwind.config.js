@@ -2,8 +2,16 @@
 export default {
   content: [ "./index.html",
   "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode:'class', // allows to change the dark mode manualy on css class
   theme: {
     extend: {
+      colors:{ 
+        night:{ // Create the color's group name
+          DEFAULT : '#0d1120', // set the default color if I use only text-night
+          50 : '#171e2c', // set the first pallet color
+          500 : '#0d1120' // set the second pallet color
+        }
+      },
       keyframes :{
         "fadeIn":{
           "0%" :{ opacity:"0" },
