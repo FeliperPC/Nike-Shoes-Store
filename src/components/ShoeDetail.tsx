@@ -2,7 +2,6 @@ import Select from "./Select";
 import {QTY,SIZES } from '../data'
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_TO_CART } from "../redux/actions";
-import { SHOE_LIST } from "../data";
 import { PreviewState } from "../types";
 
 function ShoeDetail() {
@@ -28,7 +27,7 @@ function ShoeDetail() {
         {/* buttoms and links */}
         <div className="space-x-10">
           <button className="w-44 h-14 bg-black text-white hover:bg-gray-900 active:bg-gray-700 btn-press-animation"
-            onClick={()=>dispatch(ADD_TO_CART(SHOE_LIST[0]))}
+            onClick={()=>dispatch(ADD_TO_CART(rootState))}
           >
             Add to chart
           </button>

@@ -1,7 +1,7 @@
 import { SIDEBAR_IS_SHOWN } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { SideBarState, CartState } from "../types";
-import Card from "./Card";
+import CartItem from "./CartItem";
 
 function Cart() {
   
@@ -20,9 +20,7 @@ function Cart() {
     >
       <h2 className="text-2xl font-bold mb-10">Cart</h2>
       <div className="space-y-4">
-        {/* {rootState &&
-          <Card shoe={rootState[0]}/>
-        } */}
+        {rootState.shoeList.map((item)=><CartItem shoe={item}/>)}
       </div>
       <button
         className="absolute text-black font-bold p-2 top-4 right-4"
