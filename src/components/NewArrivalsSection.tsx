@@ -3,9 +3,9 @@ import { CardListType } from "../types";
 
 function NewArrivalsSection({ shoeList }: CardListType) {
   return (
-    <div className="mt-20">
+    <div className="mt-20 ">
       <div className="flex-center">
-        <h1 className="text-4xl font-extrabold bg-[url('./assets/lines.png')] bg-center">
+        <h1 className=" dark:text-white text-4xl font-extrabold bg-[url('./assets/lines.png')] bg-center">
           NEW ARRIVALS
         </h1>
       </div>

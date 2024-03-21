@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { SideBarState } from "../types";
 import Cart from "./Cart";
 
-
 function SideBar() {
   const isShown = useSelector(
     (state: SideBarState) => state.sideBarReducer.isShown

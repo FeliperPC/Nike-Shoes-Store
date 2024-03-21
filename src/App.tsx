@@ -5,17 +5,16 @@ import { SHOE_LIST } from "./data";
 import SideBar from "./components/SideBar";
 import DarkModeBtn from "./components/DarkModeBtn";
 
-
 function App() {
   return (
-    <div className="p-10 xl:px-24 animate-fadeIn">
-      <Nav/>
+    <div className="p-10 xl:px-24 animate-fadeIn dark:bg-night">
+      <Nav />
       <ShoeDetail />
       <NewArrivalsSection shoeList={SHOE_LIST} />
-      <SideBar/>
+      <SideBar />
       <DarkModeBtn />
     </div>
   );
 }
 
-export default App
+export default App;

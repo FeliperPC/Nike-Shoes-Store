@@ -13,11 +13,11 @@ function Nav() {
     <nav className="relative z-10 flex flex-wrap items-center justify-between">
       {/* logo, throws nowhere */}
       <a href="#">
-        <NikeLogo className="h-20 w-20" />
+        <NikeLogo className="h-20 w-20 dark:fill-white" />
       </a>
       {/* burguerButton */}
       <button
-        className="lg:hidden hover:bg-gray-100 p-2 focus:ring-2 rounded-lg focus:ring-gray-200"
+        className="lg:hidden hover:bg-gray-100 p-2 focus:ring-2 rounded-lg focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700"
         onClick={() => setIsMobile(!isMobile)}
       >
         {/* Thinking on mobile first the buttom on larger screens should not appear */}
@@ -27,7 +27,7 @@ function Nav() {
       <div className={`${!isMobile && "hidden"} w-full lg:w-auto p lg:block`}>
         <ul
           className="lg:space-x-8 flex flex-col lg:flex-row lg:bg-transparent bg-gray-50 lg:border-none text-lg
-         border-gray-100 rounded-lg p-4 cursor-pointer"
+         border-gray-100 rounded-lg p-4 cursor-pointer lg:dark:text-white"
         >
           {/* li has display block., no need to insert display column */}
           {ROUTES.map((item, i) => (
@@ -35,10 +35,10 @@ function Nav() {
               className={`px-3 py-2 rounded lg:hover:bg-transparent lg:hover:text-blue-500
               ${
                 i === 0
-                  ? "bg-blue-500 lg:bg-transparent lg:text-blue-500 text-white"
+                  ? "bg-blue-500 lg:bg-transparent lg:text-blue-500 text-white "
                   : "hover:bg-gray-100 "
               }
-              ${(i == 3 || i == 4) && "lg:text-white"}
+              ${(i == 3 || i == 4) && "lg:text-white dark:text-night"}
               `}
               key={item}
             >

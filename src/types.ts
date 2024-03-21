@@ -20,15 +20,15 @@ export type PreviewState = {
 };
 
 export type CartState = {
-  cartReducer : {
-    shoeList : ShoeType[]
-  }
-}
+  cartReducer: {
+    shoeList: ShoeType[];
+  };
+};
 
 export type SelectType = {
   options: number[];
   title: string;
-  className?:string
+  className?: string;
 };
 
 export type CardListType = {
@@ -36,5 +36,5 @@ export type CardListType = {
 };
 
 export type ProductProps = {
-  shoe : ShoeType
-}
+  shoe: ShoeType;
+};
