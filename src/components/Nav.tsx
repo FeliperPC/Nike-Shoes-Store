@@ -1,5 +1,5 @@
 import { TbShoppingBag } from "react-icons/tb";
-import NikeLogo from "../assets/nike-logo.svg?react";
+import NikeLogo from '../assets/NikeLogo'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import { SIDEBAR_IS_SHOWN } from "../redux/actions";
