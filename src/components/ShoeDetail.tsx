@@ -3,12 +3,23 @@ import { QTY, SIZES } from "../data";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_TO_CART } from "../redux/actions";
 import { PreviewState } from "../types";
+import { useEffect, useState } from "react";
 
 function ShoeDetail() {
+  const [errorAddToCart,setErrorAddToCart] = useState(false)
   const dispatch = useDispatch();
   const rootState = useSelector(
     (state: PreviewState) => state.previewReducer.shoe
   );
+  function handleClick() {
+    if(rootState.qty!==0&& rootState.size!==0){
+      dispatch(ADD_TO_CART(rootState))
+      setErrorAddToCart(false)
+    } else {
+      setErrorAddToCart(true)
+    }
+  }
+  useEffect(()=>{setErrorAddToCart(false)},[rootState])
   return (
     <div className="flex flex-col lg:flex-row-reverse space-y-4 dark:text-white">
       {/* Image */}
@@ -28,11 +39,12 @@ function ShoeDetail() {
           <Select options={QTY} title={"QTY"} />
           <Select options={SIZES} title={"SIZES"} />
         </div>
+        {errorAddToCart && <p className="text-red-600"> You must choose a SIZE and QUANTITY</p>}
         {/* buttoms and links */}
         <div className="space-x-10">
           <button
             className="w-44 h-14 bg-black text-white hover:bg-gray-900 active:bg-gray-700 btn-press-animation dark:bg-white dark:text-night"
-            onClick={() => dispatch(ADD_TO_CART(rootState))}
+            onClick={handleClick}
           >
             Add to chart
           </button>

@@ -26,7 +26,7 @@ function Nav() {
       {/* Menu list */}
       <div className={`${!isMobile && "hidden"} w-full lg:w-auto p lg:block`}>
         <ul
-          className="lg:space-x-8 flex flex-col lg:flex-row lg:bg-transparent bg-gray-50 lg:border-none text-lg
+          className="lg:space-x-8 flex flex-col mb-2 md:mb-auto lg:mb-auto lg:flex-row lg:bg-transparent bg-gray-50 lg:border-none text-lg
          border-gray-100 rounded-lg p-4 cursor-pointer lg:dark:text-white"
         >
           {/* li has display block., no need to insert display column */}

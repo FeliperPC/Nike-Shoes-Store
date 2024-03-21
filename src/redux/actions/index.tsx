@@ -10,10 +10,14 @@ const ADD_TO_CART = (product: ShoeType) => ({
 });
 
 
-const RM_FROM_CART = (product: ShoeType) => ({
-  type: "RM_FROM_CART",
-  payload: product,
-});
+const RM_FROM_CART = (product: ShoeType) => {
+  product.qty =0 
+  product.size=0
+  return {
+    type: "RM_FROM_CART",
+    payload: product,
+  }
+};
 
 const PREVIEW = (product: ShoeType, info:ShoeInfo) => {
   if(info){

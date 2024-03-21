@@ -15,7 +15,7 @@ function CartItem({ shoe }: ProductProps) {
           <h2 className="font-bold">{shoe.title}</h2>
           <p className="text-sm text-gray-400">{shoe.description}</p>
         </div>
-        <h1 className="font-bold">{shoe.price}$</h1>
+        <h1 className="font-bold">{shoe.qty === 1 ? shoe.price : shoe.price * shoe.qty}$</h1>
       </div>
       <div className="flex justify-between pl-32 mb-2">
         <div className="flex space-x-6 dark:text-white">
@@ -28,7 +28,7 @@ function CartItem({ shoe }: ProductProps) {
             <Select options={SIZES} title={shoe.size.toString()} className={"p-1 w-16"} />
           </label>
         </div>
-        <button onClick={() => dispatch(RM_FROM_CART(shoe))}>
+        <button onClick={()=>dispatch(RM_FROM_CART(shoe))}>
           <CiTrash className="text-black mr-2 dark:text-white" size={25} />
         </button>
       </div>
