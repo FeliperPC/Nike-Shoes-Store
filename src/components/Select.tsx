@@ -1,8 +1,18 @@
 import { IoIosArrowDown } from "react-icons/io";
 import { twMerge } from "tw-merge";
-import { SelectType } from "../types";
+import { PreviewState, SelectType } from "../types";
+import { useDispatch, useSelector } from "react-redux";
+import { PREVIEW } from "../redux/actions";
 
 function Select({ options, title, className = "" }: SelectType) {
+  const dispatch = useDispatch();
+  const rootState = useSelector(
+    (state: PreviewState) => state.previewReducer.shoe
+  );
+  function handleChange(key: string, value: string) {
+    const info = { key: key, value: parseInt(value) };
+    dispatch(PREVIEW(rootState, info));
+  }
   return (
     <div className="relative dark:text-night">
       <select
@@ -10,6 +20,7 @@ function Select({ options, title, className = "" }: SelectType) {
         className={twMerge(
           `w-24 appearance-none border border-gray-300 bg-white p-4 ${className}`
         )}
+        onChange={({ target }) => handleChange(title, target.value)}
         // twMerge assures that whatever tailwind that comes in the props will for sure overwrite any priority css before
       >
         <option value={title} disabled hidden>

@@ -5,6 +5,8 @@ export type ShoeType = {
   title: string;
   description: string;
   price: number;
+  size:number,
+  qty : number
 };
 
 export type SideBarState = {
@@ -37,4 +39,9 @@ export type CardListType = {
 
 export type ProductProps = {
   shoe: ShoeType;
+};
+
+export type ShoeInfo = {
+  key : string,
+  value : number
 };

@@ -15,6 +15,8 @@ export const SHOE_LIST = [
     description:
       "The Nike Air Max 270 is a lifestyle shoe that's sure to turn heads with its vibrant color gradient.",
     price: 160,
+    size:0,
+    qty:0
   },
   {
     id: 2,
@@ -24,6 +26,8 @@ export const SHOE_LIST = [
     description:
       "The Nike Air Vapor is a sleek and stylish shoe that's perfect for any occasion. It's the perfect shoe for any active lifestyle.",
     price: 100,
+    size:0,
+    qty:0
   },
   {
     id: 3,
@@ -33,6 +37,8 @@ export const SHOE_LIST = [
     description:
       "The Nike Air Max 2090 is shoe that's both stylish and comfortable. It's the perfect shoe for any fashion-forward individual.",
     price: 150,
+    size:0,
+    qty:0
   },
   {
     id: 4,
@@ -42,5 +48,7 @@ export const SHOE_LIST = [
     description:
       "The Nike Air Blazer is a classic shoe that's perfect for any casual occasion. It's the perfect shoe for any laid-back individual.",
     price: 110,
+    size:0,
+    qty:0
   },
 ];

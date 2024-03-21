@@ -17,15 +17,15 @@ function CartItem({ shoe }: ProductProps) {
         </div>
         <h1 className="font-bold">{shoe.price}$</h1>
       </div>
-      <div className="flex justify-between pl-32">
+      <div className="flex justify-between pl-32 mb-2">
         <div className="flex space-x-6 dark:text-white">
           <label className="font-semibold">
             QTY
-            <Select options={QTY} title="" className={"p-1 w-16"} />
+            <Select options={QTY} title={shoe.qty.toString()} className={"p-1 w-16"} />
           </label>
           <label className="font-semibold">
             SIZE
-            <Select options={SIZES} title="" className={"p-1 w-16"} />
+            <Select options={SIZES} title={shoe.size.toString()} className={"p-1 w-16"} />
           </label>
         </div>
         <button onClick={() => dispatch(RM_FROM_CART(shoe))}>

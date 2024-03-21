@@ -25,6 +25,12 @@ const cartReducer = (state = INITIAL_STATE, action: AnyAction) => {
         shoeList:updatedList
       }
     }
+    case "ADD_INFO": {
+      return {
+        ...state,
+        shoeList:[...state.shoeList,action.payload]
+      }
+    }
     default: {
       return state;
     }
