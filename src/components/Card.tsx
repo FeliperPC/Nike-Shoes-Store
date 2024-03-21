@@ -7,7 +7,7 @@ function Card({ shoe }: ProductProps) {
   return (
     <div
       className={`${shoe.className} max-w-xl transform cursor-pointer transition hover:scale-105`}
-      onClick={() => dispatch(PREVIEW(shoe))}
+      onClick={() => dispatch(PREVIEW(shoe,{}))}
     >
       <div className="p-8">
         <h1 className="text-2xl font-bold">{shoe.title}</h1>

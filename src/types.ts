@@ -42,6 +42,6 @@ export type ProductProps = {
 };
 
 export type ShoeInfo = {
-  key : string,
-  value : number
+  key? : string,
+  value? : number
 };

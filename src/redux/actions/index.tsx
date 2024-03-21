@@ -20,7 +20,7 @@ const RM_FROM_CART = (product: ShoeType) => {
 };
 
 const PREVIEW = (product: ShoeType, info:ShoeInfo) => {
-  if(info){
+  if(info.value){
     if(info.key==='QTY'){
       product.qty = info.value
     } else {
